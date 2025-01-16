@@ -1,5 +1,5 @@
-const encoding = process.env.TOKEN_JWT;
-const expiresIn = process.env.TOKEN_EXP;
+const encoding = '31990dbc-458d-4441-b279-5da3a75fd76e';
+const expiresIn = '24h';
 const jwt = require('jsonwebtoken');
 
 type jwtClient = {
