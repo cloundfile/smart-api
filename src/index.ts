@@ -37,5 +37,7 @@ AppDataSource.initialize().then(() => {
 	app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
 		return res.status(500).send({mensagem: error.message});
 	});
-	return app.listen(process.env.PORT)
+	return app.listen(process.env.PORT, ()=> {
+		console.log(`API RUNNING PORT: ${process.env.PORT}`)
+	})
 });

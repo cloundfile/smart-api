@@ -24,7 +24,7 @@
     npm i jsonwebtoken bcryptjs morgan  --save
 ```
 
-## Variaveis de ambiente
+## Variaveis de ambiente .env
 ```diff
 DATABASE_USERNAME = ""
 DATABASE_PASSWORD = ""
@@ -33,3 +33,9 @@ DATABASE_HOSTNAME = ""
 TOKEN_JWT = ""
 PORT=
 ```
+
+```
+npm install -g vercel
+vercel --version
+```
+
