@@ -8,7 +8,8 @@
     "migration:run": "typeorm-ts-node-commonjs -d ./src/data-source.ts migration:run",
     "dev": "nodemon --exec ts-node ./src/index.ts",
     "start": "node ./dist/index.js",
-    "build": "tsc"
+    "build": "tsc",
+    "vercel-build": "tsc"
   },
   "keywords": [
     "api",
