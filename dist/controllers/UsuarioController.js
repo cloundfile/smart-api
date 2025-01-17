@@ -3,9 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UsuarioController = void 0;
 const UsuariosRep_1 = require("../repositories/UsuariosRep");
 const bcrypt = require('bcryptjs');
-
 class UsuarioController {
-    async create(req, res) {        
+    async create(req, res) {
         const { fullname, email, username, password } = req.body;
         if (!fullname || !email || !username || !password)
             return res.status(400).json({ message: "Campos com * obrigatório." });
@@ -20,7 +19,6 @@ class UsuarioController {
         const response = { uuid: usuario.id, username: usuario.username };
         return res.status(201).json(response);
     }
-
     async findall(req, res) {
         const response = await UsuariosRep_1.usuarioRep.find();
         if (response.length === 0)
@@ -43,7 +41,6 @@ class UsuarioController {
         const response = { uuid: usuario.id, username: usuario.username };
         return res.json(response);
     }
-
     async findByUsername(req, res) {
         const { username } = req.body;
         if (!username)
@@ -56,7 +53,6 @@ class UsuarioController {
         const response = usuarios.map(item => { return { id: item.id, username: item.username }; });
         return res.json(response);
     }
-
     async update(req, res) {
         const { id, fullname, email, username, password } = req.body;
         if (!id || !fullname || !email || !username || !password)
@@ -79,7 +75,6 @@ class UsuarioController {
             message: "Atualizado com sucesso!"
         });
     }
-    
     async delete(req, res) {
         const { id } = req.body;
         if (!id)
